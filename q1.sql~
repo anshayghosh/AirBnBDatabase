@@ -17,4 +17,4 @@ CREATE VIEW numbookingrequests AS SELECT extract ( year from startdate ) , trave
 
 create view bookingandrequests as select coalesce(a.travelerid,b.travelerid) as travelerid,coalesce(a.date_part,b.date_part) as year,coalesce(a.count,0) as numBookings,coalesce(b.count,0) as numRequests from numbookings a full join numbookingrequests b on a.travelerid = b.travelerid and a.date_part = b.date_part;
 
-select coalesce(a.travelerid,b.travelerid) as travelerid, email, year,coalesce(numrequests,0) as numRequests, coalesce(numbookings,0) as numBooking from bookingandrequests a right join traveler b on a.travelerid = b.travelerid order by year DESC, travelerid ASC;
+select coalesce(a.travelerid,b.travelerid) as travelerid, email, year,coalesce(numrequests,0) as numRequests, coalesce(numbookings,0) as numBooking from bookingandrequests a right join traveler b on a.travelerid = b.travelerid order by year DESC travelerid ASC;

@@ -52,8 +52,17 @@ public class Assignment2 {
    *
    * @return true if the closing was successful, false otherwise
    */
-   public boolean disconnectDB() {
+   public boolean disconnectDB() throws SQLException{
       // Implement this method!
+      try{
+      	connection.close();
+	return true;
+      }
+      catch (SQLException err){
+      	System.out.println(err.getMessage());
+      	return false;
+      }
+      
       return false;
    }
 

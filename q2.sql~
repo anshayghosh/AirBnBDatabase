@@ -17,8 +17,3 @@ create view countcities as select travelerid,max(numrequests) from countscraperc
 create view mostrequestedcity as select distinct a.travelerid, b.city from countcities a, countscrapercities b where a.travelerid = b.travelerid and a.max = b.numrequests order by b.city ASC; 
 
 create view scraperrequestsmade as select a.travelerid, listingid, startdate from scrapers a natural join bookingrequest b;
-
-create view numrequestsmade as select travelerid, count(*) from scraperrequestsmade group by travelerid;
-
-
-select travelerid, firstname || ' ' || surname as name, email, city as mostRequestedCity, count as numRequests from numrequestsmade natural join mostrequestedcity natural join traveler;

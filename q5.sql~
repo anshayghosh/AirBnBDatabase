@@ -1,4 +1,4 @@
-create view allratings as select homeownerid,listingid,rating,travelerrating.startdate from travelerrating natural join listing cross join homeowner where listing.owner = homeowner.homeownerid;
+create view allratings as select homeownerid,listingid,rating,homeownerrating.startdate from travelerrating natural join listing cross join homeowner where listing.owner = homeowner.homeownerid;
 
 create view ratingcount as select homeownerid, rating, count(startdate) from allratings group by homeownerid,rating;
 
