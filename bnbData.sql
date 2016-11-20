@@ -17,6 +17,9 @@ INSERT INTO Traveler VALUES (1006, 'n7', 'f7', 'fn2@domain.com');
 
 INSERT INTO Homeowner VALUES (4000, 'hn1', 'hf1', 'hfn1@domain.com');
 INSERT INTO Homeowner VALUES (4001, 'hn2', 'hf2', 'hfn2@domain.com');
+INSERT INTO Homeowner VALUES (4002, 'hn3', 'hf3', 'hfn3@domain.com');
+
+INSERT INTO Listing VALUES (3012, 'condo', 2, 4, 'gym', 'c1', 4002);
 
 INSERT INTO Listing VALUES (3000, 'condo', 2, 4, 'gym', 'c1', 4000);
 INSERT INTO Listing VALUES (3001, 'house', 2, 4, 'gym', 'c1', 4001);
@@ -31,6 +34,10 @@ INSERT INTO Listing VALUES (3009, 'house', 2, 4, 'gym', 'c2', 4001);
 INSERT INTO Listing VALUES (3010, 'house', 2, 4, 'gym', 'c2', 4001);
 INSERT INTO Listing VALUES (3011, 'house', 2, 4, 'gym', 'c2', 4001);
 
+INSERT INTO BookingRequest VALUES (6012, 1000, 3012, '2010-10-05', 2, 1, 100);
+INSERT INTO BookingRequest VALUES (6012, 1000, 3012, '2015-10-05', 2, 1, 100);
+
+
 INSERT INTO BookingRequest VALUES (6000, 1000, 3000, '2016-10-05', 2, 1, 100);
 INSERT INTO BookingRequest VALUES (6001, 1001, 3000, '2016-10-16', 4, 1, 120);
 INSERT INTO BookingRequest VALUES (6003, 1002, 3001, '2014-01-05', 10, 1, 75);
@@ -41,8 +48,14 @@ INSERT INTO BookingRequest VALUES (6007, 1002, 3005, '2005-01-05', 10, 1, 75);
 INSERT INTO BookingRequest VALUES (6008, 1004, 3006, '2014-01-05', 10, 1, 75);
 INSERT INTO BookingRequest VALUES (6009, 1006, 3007, '2007-01-05', 10, 1, 75);
 INSERT INTO BookingRequest VALUES (6010, 1006, 3008, '2008-01-05', 10, 1, 75);
-INSERT INTO BookingRequest VALUES (6011, 1003, 3009, '2003-01-05', 10, 1, 75);
+INSERT INTO BookingRequest VALUES (6011, 1003, 3009, '2006-01-05', 10, 1, 75);
 
+INSERT INTO Booking VALUES (3012, '2010-10-05', 1000, 2, 1, 100);
+INSERT INTO Booking VALUES (3012, '2015-10-05', 1000, 2, 1, 100);
+
+
+
+INSERT INTO Booking VALUES (3009, '2006-01-05', 1000, 2, 1, 90);
 INSERT INTO Booking VALUES (3000, '2016-10-05', 1000, 2, 1, 90);
 INSERT INTO Booking VALUES (3000, '2014-10-07', 1000, 2, 1, 60);
 INSERT INTO Booking VALUES (3000, '2016-11-10', 1000, 31, 1, 10);
@@ -76,7 +89,28 @@ INSERT INTO HomeownerRating VALUES (3001, '2016-11-05', 3, 'cmt2');
 INSERT INTO CityRegulation VALUES ('c1', 'condo', 'min', 30);
 INSERT INTO CityRegulation VALUES ('c2', 'house', 'max', 90);
 
+INSERT INTO TravelerRating VALUES (3012, '2010-10-05', 5, 'cmt3');
+INSERT INTO TravelerRating VALUES (3012, '2015-10-05', 1, 'cmt3');
+
+
+INSERT INTO TravelerRating VALUES (3009, '2006-01-05', 5, 'cmt3');
 INSERT INTO TravelerRating VALUES (3000, '2016-10-05', 5, 'cmt3');
+INSERT INTO TravelerRating VALUES (3000, '2016-11-10', 4, 'cmt3');
+INSERT INTO TravelerRating VALUES (3000, '2016-5-10', 4, 'cmt3');
+INSERT INTO TravelerRating VALUES (3000, '2014-10-07', 2, 'cmt3');
+
+
+INSERT INTO TravelerRating VALUES (3010, '2009-05-15', 3, 'cmt3');
+INSERT INTO TravelerRating VALUES (3010, '2008-12-15', 5, 'cmt3');
+
+INSERT INTO TravelerRating VALUES (3004, '2016-10-06', 2, 'cmt3');
+INSERT INTO TravelerRating VALUES (3004, '2016-10-05', 5, 'cmt3');
+
+INSERT INTO TravelerRating VALUES (3003, '2016-01-10', 3, 'cmt3');
+
+INSERT INTO TravelerRating VALUES (3005, '2016-10-06', 1, 'cmt3');
+
+
 
 
 
